@@ -42,14 +42,25 @@
 }
 
 /* Animation classes */
+/* Visible by default; only set initial opacity:0 when motion is allowed */
 .animate-fade-in-up {
-  animation: fadeInUp 0.8s ease-out forwards;
-  opacity: 0;
+  opacity: 1;
+}
+@media (prefers-reduced-motion: no-preference) {
+  .animate-fade-in-up {
+    animation: fadeInUp 0.8s ease-out forwards;
+    opacity: 0;
+  }
 }
 
 .animate-fade-in-right {
-  animation: fadeInRight 0.8s ease-out forwards;
-  opacity: 0;
+  opacity: 1;
+}
+@media (prefers-reduced-motion: no-preference) {
+  .animate-fade-in-right {
+    animation: fadeInRight 0.8s ease-out forwards;
+    opacity: 0;
+  }
 }
 
 .animate-float {
