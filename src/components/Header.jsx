@@ -37,7 +37,7 @@ export default function Header() {
             </Button>
             <Button 
               variant="primary" 
-              href="mailto:hello@rewarditt.app"
+              to="/get-started"
             >
               Get Started
             </Button>

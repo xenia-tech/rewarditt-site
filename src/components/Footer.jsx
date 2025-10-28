@@ -12,17 +12,7 @@ export default function Footer() {
             <p className="text-gray-400 max-w-md mb-6">
               Great Rewards, Top Brands
             </p>
-            <div className="flex space-x-4">
-              <div className="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-gray-700 transition-colors cursor-pointer">
-                <div className="w-5 h-5 bg-brand rounded-sm"></div>
-              </div>
-              <div className="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-gray-700 transition-colors cursor-pointer">
-                <div className="w-5 h-5 bg-brand rounded-sm"></div>
-              </div>
-              <div className="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-gray-700 transition-colors cursor-pointer">
-                <div className="w-5 h-5 bg-brand rounded-sm"></div>
-              </div>
-            </div>
+            {/* Social icons removed */}
           </div>
           
           {/* <div>
@@ -38,7 +28,6 @@ export default function Footer() {
           <div>
             <h3 className="text-white font-bold mb-4">Company</h3>
             <ul className="space-y-3">
-              <li><a href="#" className="text-gray-400 hover:text-white transition-colors">About</a></li>
               {/* <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Careers</a></li> */}
               <li><Link to="/terms" className="text-gray-400 hover:text-white transition-colors" onClick={() => window.scrollTo(0, 0)}>Terms</Link></li>
               <li><Link to="/privacy" className="text-gray-400 hover:text-white transition-colors" onClick={() => window.scrollTo(0, 0)}>Privacy</Link></li>

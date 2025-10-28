@@ -26,11 +26,8 @@ export default function Home() {
                   Rewarditt connects convenience retailers with exclusive offers from leading food & drink brands. Simple to browse. Easy to redeem.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 animate-fade-in-up animation-delay-600">
-                  <Button variant="primary" href="mailto:hello@rewarditt.app">
+                  <Button variant="primary" to="/get-started">
                     Get Started
-                  </Button>
-                  <Button variant="ghost" className="!text-black" href="mailto:hello@rewarditt.app">
-                    Learn More
                   </Button>
                 </div>
                 <div className="mt-8 animate-fade-in-up animation-delay-800">
@@ -62,13 +59,32 @@ export default function Home() {
             </div>
           </div>
         </div>
+        {/* Enhanced animated background layers (non-intrusive) */}
+        <div className="pointer-events-none absolute inset-0">
+          {/* subtle animated gradient wash */}
+          <div
+            className="absolute inset-0 opacity-30 animate-gradient-shift"
+            style={{
+              animationDuration: '6s',
+              background: `radial-gradient(600px circle at 20% 20%, rgba(16,185,129,0.15), transparent 60%),
+                           radial-gradient(520px circle at 80% 25%, rgba(59,130,246,0.15), transparent 60%),
+                           radial-gradient(700px circle at 50% 85%, rgba(139,92,246,0.12), transparent 60%)`
+            }}
+          />
+          {/* floating blurred orbs */}
+          <div className="absolute -top-24 -right-32 w-[40rem] h-[40rem] bg-brand/20 rounded-full blur-3xl animate-float-slow" style={{ animationDuration: '8s' }} />
+          <div className="absolute -bottom-32 -left-24 w-[34rem] h-[34rem] bg-purple-500/20 rounded-full blur-3xl animate-float-delayed" style={{ animationDuration: '7s' }} />
+          {/* extra subtle orb */}
+          <div className="absolute top-1/2 left-1/3 -translate-x-1/2 -translate-y-1/2 w-[22rem] h-[22rem] bg-blue-500/20 rounded-full blur-3xl animate-float" style={{ animationDuration: '6s' }} />
+        </div>
+        {/* base brand tint */}
         <div className="absolute inset-0 bg-gradient-to-br from-brand/15 via-brand/5 to-brand/10"></div>
       </Section>
 
       {/* How it Works */}
       <Section className="bg-gray-light animate-fade-in-up">
         <div className="container-max">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
+          <div className="grid lg:grid-cols-1 gap-16 items-start">
             <div>
               <h2 className="h2 mb-6">How it works</h2>
               <p className="lead mb-12">
@@ -113,52 +129,6 @@ export default function Home() {
                 </div>
               </div>
             </div>
-            
-            <div className="relative hover:scale-105 transition-transform duration-300">
-              <div className="relative z-10 max-w-xs mx-auto">
-                <div className="bg-gradient-to-br from-gray-900 to-black rounded-3xl p-1 shadow-2xl">
-                  <div className="bg-black rounded-3xl p-6">
-                    <div className="bg-brand rounded-2xl p-4 mb-6 relative overflow-hidden">
-                      <div className="relative z-10">
-                        <div className="text-black font-bold text-lg mb-1">$2,750.42</div>
-                        <div className="text-black/70 text-xs">Available Balance</div>
-                      </div>
-                      <div className="absolute top-0 right-0 w-20 h-20 bg-white/10 rounded-full -mr-10 -mt-10"></div>
-                    </div>
-                    
-                    <div className="grid grid-cols-2 gap-3 mb-6">
-                      <button className="bg-gray-800 rounded-xl p-3 text-left">
-                        <div className="w-8 h-8 bg-brand rounded-lg mb-2"></div>
-                        <div className="text-white text-sm font-medium">Send</div>
-                      </button>
-                      <button className="bg-gray-800 rounded-xl p-3 text-left">
-                        <div className="w-8 h-8 bg-blue-500 rounded-lg mb-2"></div>
-                        <div className="text-white text-sm font-medium">Request</div>
-                      </button>
-                    </div>
-                    
-                    <div className="space-y-2">
-                      <div className="flex items-center gap-3 p-2">
-                        <div className="w-8 h-8 bg-brand rounded-full"></div>
-                        <div className="flex-1">
-                          <div className="text-white text-sm">Sarah Johnson</div>
-                          <div className="text-gray-400 text-xs">+44 7700 900123</div>
-                        </div>
-                      </div>
-                      <div className="flex items-center gap-3 p-2">
-                        <div className="w-8 h-8 bg-purple-500 rounded-full"></div>
-                        <div className="flex-1">
-                          <div className="text-white text-sm">Mike Chen</div>
-                          <div className="text-gray-400 text-xs">+44 7700 900456</div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div className="absolute -top-8 -right-8 w-32 h-32 bg-brand/20 rounded-full blur-3xl animate-float"></div>
-              <div className="absolute -bottom-8 -left-8 w-32 h-32 bg-purple-500/20 rounded-full blur-3xl animate-float-delayed"></div>
-            </div>
           </div>
         </div>
       </Section>
@@ -174,115 +144,40 @@ export default function Home() {
           </div>
           <div className="grid md:grid-cols-3 gap-8 mb-16">
             <FeatureCard
-              title="Smart Analytics"
-              description="Track your spending patterns and get insights into your financial habits with detailed analytics"
+              title="Exclusive Brand Offers"
+              description="Access digital coupons from leading food & drink brands to stock your shelves for less."
             />
             <FeatureCard
-              title="Budget Planning"
-              description="Set and manage budgets with intelligent recommendations based on your spending history"
+              title="Instant Redemption"
+              description="Claim an offer in-app and complete your order on the brand’s site—no points, no hassle."
             />
             <FeatureCard
-              title="Goal Tracking"
-              description="Set financial goals and track your progress with personalized milestones and achievements"
+              title="Track Savings"
+              description="See how much you save each month with a clear view of claimed and redeemed offers."
             />
           </div>
         </div>
       </Section>
 
-      {/* Plan for every milestone */}
-      <Section className="bg-gray-light animate-fade-in-up">
+      {/* Two-up text section: Exclusive deals + Simple rewards */}
+      <Section className="bg-white animate-fade-in-up">
         <div className="container-max">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
+          <div className="grid lg:grid-cols-2 gap-16 items-start">
             <div>
               <h2 className="h2 mb-6">Exclusive deals for<br />every shop.</h2>
               <p className="lead mb-8">
                 From energy drinks and snacks to pantry essentials, Rewarditt gives UK shop owners instant access to special digital coupons from the nation's favourite food and drink brands. Save on every order and keep your shelves stocked for less.
               </p>
-              <Button variant="primary" href="mailto:hello@rewarditt.app">
+              <Button variant="primary" to="/get-started">
                 Start Saving
               </Button>
             </div>
-            
-            <div className="relative hover:scale-105 transition-transform duration-300">
-              <div className="relative z-10 max-w-xs mx-auto">
-                <div className="bg-gradient-to-br from-gray-900 to-black rounded-3xl p-6 shadow-2xl border border-gray-800">
-                  <div className="text-center mb-6">
-                    <div className="text-white font-bold text-2xl mb-1">£50</div>
-                    <div className="text-gray-400 text-sm">saved this month</div>
-                  </div>
-                  
-                  <div className="bg-brand rounded-2xl p-4 mb-4">
-                    <div className="text-black font-bold text-lg mb-1">20% Off</div>
-                    <div className="text-black/70 text-sm">Red Bull Energy Drinks</div>
-                  </div>
-                  
-                  <div className="space-y-3">
-                    <div className="flex items-center justify-between">
-                      <span className="text-gray-400 text-sm">Expires</span>
-                      <span className="text-white font-medium">30 Sept</span>
-                    </div>
-                    <div className="flex items-center justify-between">
-                      <span className="text-gray-400 text-sm">Status</span>
-                      <span className="text-brand font-medium">Available</span>
-                    </div>
-                    <div className="flex items-center justify-between">
-                      <span className="text-gray-400 text-sm">Redeemed</span>
-                      <span className="text-white font-medium">12 times</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div className="absolute -top-8 -right-8 w-32 h-32 bg-brand/20 rounded-full blur-3xl animate-float"></div>
-              <div className="absolute -bottom-8 -left-8 w-32 h-32 bg-blue-500/20 rounded-full blur-3xl animate-float-delayed"></div>
-            </div>
-          </div>
-        </div>
-      </Section>
-
-      {/* Expert Guidance */}
-      <Section className="bg-white animate-fade-in-up">
-        <div className="container-max">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
-            <div className="relative hover:scale-105 transition-transform duration-300">
-              <div className="relative z-10 max-w-xs mx-auto">
-                <div className="bg-gradient-to-br from-gray-900 to-black rounded-3xl p-6 shadow-2xl border border-gray-800">
-                  <div className="flex items-center gap-3 mb-6">
-                    <div className="w-10 h-10 bg-brand rounded-full flex items-center justify-center">
-                      <span className="text-black font-bold text-sm">RB</span>
-                    </div>
-                    <div>
-                      <div className="text-white font-medium text-sm">Red Bull</div>
-                      <div className="text-gray-400 text-xs">Limited time offer</div>
-                    </div>
-                  </div>
-                  
-                  <div className="bg-brand rounded-2xl p-4 mb-4">
-                    <div className="text-black font-bold text-lg mb-1">£80 off</div>
-                    <div className="text-black/70 text-xs">Red Bull Energy Drinks</div>
-                  </div>
-                  
-                  <div className="space-y-3">
-                    <div className="bg-gray-800/50 rounded-xl p-3">
-                      <div className="text-white text-sm font-medium mb-1">Redeem Today</div>
-                      <div className="text-gray-400 text-xs">Tap to claim this exclusive offer</div>
-                    </div>
-                    <div className="bg-gray-800/50 rounded-xl p-3">
-                      <div className="text-white text-sm font-medium mb-1">Valid Until</div>
-                      <div className="text-gray-400 text-xs">30 September 2024</div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div className="absolute -top-8 -right-8 w-32 h-32 bg-brand/20 rounded-full blur-3xl animate-float"></div>
-              <div className="absolute -bottom-8 -left-8 w-32 h-32 bg-purple-500/20 rounded-full blur-3xl animate-float-delayed"></div>
-            </div>
-            
             <div>
               <h2 className="h2 mb-6">Simple, instant rewards—<br />no fuss.</h2>
               <p className="lead mb-8">
                 Just tap Redeem in the app to claim an offer and complete your order on the brand's site. No points to collect, no hidden fees—just straightforward savings from trusted names like Red Bull, Kettle Chips and more.
               </p>
-              <Button variant="primary" href="mailto:hello@rewarditt.app">
+              <Button variant="primary" to="/get-started">
                 Get Started
               </Button>
             </div>
